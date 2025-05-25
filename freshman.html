@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的大学第一年总结</title>
+  <!-- 引入Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- 引入Font Awesome图标 -->
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <!-- 引入Chart.js用于数据可视化 -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+  
+  <!-- Tailwind配置 -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#8B5CF6', // 主色调：紫色
+            secondary: '#EC4899', // 辅助色：粉色
+          },
+        },
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-50 font-sans">
+  <!-- 导航栏 -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <div class="flex items-center">
+        <i class="fa fa-graduation-cap text-primary text-xl mr-2"></i>
+        <span class="font-bold text-lg">大一时光机</span>
+      </div>
+      <div class="hidden md:flex space-x-6">
+        <a href="#intro" class="text-gray-600 hover:text-primary">引言</a>
+        <a href="#stats" class="text-gray-600 hover:text-primary">学习数据</a>
+        <a href="#highlights" class="text-gray-600 hover:text-primary">高光时刻</a>
+        <a href="#friends" class="text-gray-600 hover:text-primary">伙伴们</a>
+        <a href="#ending" class="text-gray-600 hover:text-primary">年终总结</a>
+      </div>
+      <button class="md:hidden text-gray-600" id="menuToggle">
+        <i class="fa fa-bars text-xl"></i>
+      </button>
+    </div>
+    <!-- 移动端菜单 -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100">
+      <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+        <a href="#intro" class="text-gray-600 hover:text-primary py-2">引言</a>
+        <a href="#stats" class="text-gray-600 hover:text-primary py-2">学习数据</a>
+        <a href="#highlights" class="text-gray-600 hover:text-primary py-2">高光时刻</a>
+        <a href="#friends" class="text-gray-600 hover:text-primary py-2">伙伴们</a>
+        <a href="#ending" class="text-gray-600 hover:text-primary py-2">年终总结</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 顶部区域 -->
+  <section id="intro" class="pt-24 pb-16 bg-gradient-to-br from-primary/10 to-secondary/10">
+    <div class="container mx-auto px-4 text-center">
+      <div class="w-20 h-20 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-6">
+        <i class="fa fa-calendar text-3xl text-primary"></i>
+      </div>
+      <h1 class="text-3xl md:text-4xl font-bold mb-4">我的大学<span class="text-primary">第一年</span>总结</h1>
+      <p class="text-gray-600 max-w-2xl mx-auto mb-8">从青涩到成长，这一年的点点滴滴都值得被铭记</p>
+      <div class="flex items-center justify-center space-x-4 mb-8">
+        <div class="flex items-center">
+          <i class="fa fa-user-circle-o text-primary mr-2"></i>
+          <span>张三</span>
+        </div>
+        <div class="h-2 w-2 rounded-full bg-gray-300"></div>
+        <div class="flex items-center">
+          <i class="fa fa-graduation-cap text-primary mr-2"></i>
+          <span>计算机科学与技术学院</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 个人信息卡片 -->
+  <section class="py-12 -mt-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
+        <div class="h-24 bg-gradient-to-r from-primary to-secondary"></div>
+        <div class="px-6 -mt-16 pb-8">
+          <div class="flex flex-col md:flex-row items-center">
+            <div class="w-28 h-28 rounded-full border-4 border-white shadow-lg overflow-hidden mb-4 md:mb-0">
+              <img src="https://picsum.photos/200/200?random=1" alt="个人照片" class="w-full h-full object-cover">
+            </div>
+            <div class="ml-0 md:ml-6 text-center md:text-left">
+              <h2 class="text-2xl font-bold mb-2">张三</h2>
+              <p class="text-gray-600 mb-3">计算机科学与技术学院 · 2024级本科生</p>
+              <div class="flex flex-wrap justify-center md:justify-start gap-2">
+                <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">编程爱好者</span>
+                <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm">篮球社成员</span>
+                <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm">摄影初学者</span>
+              </div>
+            </div>
+          </div>
+          <div class="mt-8 pt-6 border-t border-gray-100">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div class="text-center">
+                <div class="text-2xl font-bold text-primary mb-1">42</div>
+                <div class="text-gray-500 text-sm">已修学分</div>
+              </div>
+              <div class="text-center">
+                <div class="text-2xl font-bold text-primary mb-1">28</div>
+                <div class="text-gray-500 text-sm">课程数量</div>
+              </div>
+              <div class="text-center">
+                <div class="text-2xl font-bold text-primary mb-1">16</div>
+                <div class="text-gray-500 text-sm">新朋友</div>
+              </div>
+              <div class="text-center">
+                <div class="text-2xl font-bold text-primary mb-1">12</div>
+                <div class="text-gray-500 text-sm">社团活动</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 学习数据统计 -->
+  <section id="stats" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold mb-4">学习数据统计</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">这一年，你在知识的海洋里不断探索，留下了这些成长的足迹</p>
+      </div>
+      
+      <!-- 成绩分布图表 -->
+      <div class="bg-white rounded-xl shadow-md p-6 max-w-3xl mx-auto mb-8">
+        <h3 class="text-xl font-bold mb-4">成绩分布</h3>
+        <div class="h-64">
+          <canvas id="gradesChart"></canvas>
+        </div>
+      </div>
+      
+      <!-- 学科能力雷达图 -->
+      <div class="bg-white rounded-xl shadow-md p-6 max-w-3xl mx-auto">
+        <h3 class="text-xl font-bold mb-4">学科能力评估</h3>
+        <div class="h-64">
+          <canvas id="skillsRadarChart"></canvas>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 高光时刻 -->
+  <section id="highlights" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold mb-4">高光时刻</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">这一年中，那些闪耀的瞬间，值得永远珍藏</p>
+      </div>
+      
+      <div class="space-y-8">
+        <!-- 时间点1 -->
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2 md:pr-12 md:text-right mb-4 md:mb-0">
+            <span class="inline-block text-sm font-medium text-primary bg-primary/10 px-3 py-1 rounded-full mb-2">2024年9月</span>
+            <h3 class="text-xl font-bold mb-2">大学报到日</h3>
+            <p class="text-gray-600">带着憧憬和期待，我踏入了大学校园，开始了全新的生活</p>
+          </div>
+          <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center z-10">
+            <i class="fa fa-flag text-white text-xl"></i>
+          </div>
+          <div class="md:w-1/2 md:pl-12 mt-4 md:mt-0">
+            <img src="https://picsum.photos/600/400?random=10" alt="大学报到日" class="rounded-lg shadow-md w-full h-48 object-cover">
+          </div>
+        </div>
+        
+        <!-- 时间点2 -->
+        <div class="flex flex-col md:flex-row-reverse items-center">
+          <div class="md:w-1/2 md:pl-12 md:text-left mb-4 md:mb-0">
+            <span class="inline-block text-sm font-medium text-primary bg-primary/10 px-3 py-1 rounded-full mb-2">2024年10月</span>
+            <h3 class="text-xl font-bold mb-2">第一次编程作业</h3>
+            <p class="text-gray-600">完成了大学的第一个编程项目，虽然简单，但充满了成就感</p>
+          </div>
+          <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center z-10">
+            <i class="fa fa-code text-white text-xl"></i>
+          </div>
+          <div class="md:w-1/2 md:pr-12 mt-4 md:mt-0">
+            <img src="https://picsum.photos/600/400?random=11" alt="第一次编程作业" class="rounded-lg shadow-md w-full h-48 object-cover">
+          </div>
+        </div>
+        
+        <!-- 时间点3 -->
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2 md:pr-12 md:text-right mb-4 md:mb-0">
+            <span class="inline-block text-sm font-medium text-primary bg-primary/10 px-3 py-1 rounded-full mb-2">2024年12月</span>
+            <h3 class="text-xl font-bold mb-2">期末考试周</h3>
+            <p class="text-gray-600">经历了紧张的期末复习，第一次感受到了大学考试的压力</p>
+          </div>
+          <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center z-10">
+            <i class="fa fa-book text-white text-xl"></i>
+          </div>
+          <div class="md:w-1/2 md:pl-12 mt-4 md:mt-0">
+            <img src="https://picsum.photos/600/400?random=12" alt="期末考试周" class="rounded-lg shadow-md w-full h-48 object-cover">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 朋友与社交 -->
+  <section id="friends" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold mb-4">伙伴们</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">这一年，认识了很多志同道合的朋友，一起成长，一起进步</p>
+      </div>
+      
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <!-- 朋友1 -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-[1.03] transition-all duration-300">
+          <img src="https://picsum.photos/200/200?random=20" alt="朋友1" class="w-full h-40 object-cover">
+          <div class="p-4">
+            <h3 class="font-bold mb-1">李四</h3>
+            <p class="text-sm text-gray-600">室友 · 编程伙伴</p>
+          </div>
+        </div>
+        
+        <!-- 朋友2 -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-[1.03] transition-all duration-300">
+          <img src="https://picsum.photos/200/200?random=21" alt="朋友2" class="w-full h-40 object-cover">
+          <div class="p-4">
+            <h3 class="font-bold mb-1">王五</h3>
+            <p class="text-sm text-gray-600">同班同学 · 篮球队友</p>
+          </div>
+        </div>
+        
+        <!-- 朋友3 -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-[1.03] transition-all duration-300">
+          <img src="https://picsum.photos/200/200?random=22" alt="朋友3" class="w-full h-40 object-cover">
+          <div class="p-4">
+            <h3 class="font-bold mb-1">赵六</h3>
+            <p class="text-sm text-gray-600">社团成员 · 摄影爱好者</p>
+          </div>
+        </div>
+        
+        <!-- 朋友4 -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-[1.03] transition-all duration-300">
+          <img src="https://picsum.photos/200/200?random=23" alt="朋友4" class="w-full h-40 object-cover">
+          <div class="p-4">
+            <h3 class="font-bold mb-1">孙七</h3>
+            <p class="text-sm text-gray-600">实验室伙伴 · 算法大神</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 年终总结 -->
+  <section id="ending" class="py-16 bg-gradient-to-br from-primary/10 to-secondary/10">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-lg p-8">
+        <h2 class="text-2xl font-bold mb-6 text-center">年终总结</h2>
+        
+        <div class="space-y-6">
+          <p class="text-gray-700 leading-relaxed">
+            大一这一年，是我人生中重要的转折点。离开家乡，踏入大学校园，我迎来了全新的挑战和机遇。
+          </p>
+          
+          <p class="text-gray-700 leading-relaxed">
+            在学习上，我接触到了专业的计算机知识，从编程基础到数据结构，每一门课程都让我受益匪浅。虽然有时候会遇到困难，但通过老师的指导和同学的帮助，我都一一克服了。这一年，我不仅学到了知识，更重要的是学会了如何自主学习。
+          </p>
+          
+          <p class="text-gray-700 leading-relaxed">
+            社交方面，我认识了许多志同道合的朋友，我们一起上课、一起参加社团活动、一起解决生活中的问题。这些友谊将是我大学生活中最宝贵的财富。
+          </p>
+          
+          <p class="text-gray-700 leading-relaxed">
+            展望大二，我希望能够更加专注于专业学习，提高自己的编程能力，争取参与一些科研项目。同时，我也会继续参加社团活动，丰富自己的课余生活。
+          </p>
+          
+          <p class="text-gray-700 leading-relaxed font-medium">
+            大一，再见！大二，你好！
+          </p>
+        </div>
+        
+        <div class="mt-10 text-center">
+          <button id="shareBtn" class="px-6 py-3 bg-primary text-white rounded-full shadow-md hover:bg-primary/90 transition-colors flex items-center mx-auto">
+            <i class="fa fa-share-alt mr-2"></i> 分享我的大一总结
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="bg-dark text-white py-8">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-4 md:mb-0">
+          <div class="flex items-center">
+            <i class="fa fa-graduation-cap text-primary text-xl mr-2"></i>
+            <span class="font-bold text-lg">大一时光机</span>
+          </div>
+          <p class="text-gray-400 mt-2">记录你的大学第一年</p>
+        </div>
+        <div class="flex space-x-4">
+          <a href="#" class="text-gray-400 hover:text-white transition-colors">
+            <i class="fa fa-weixin text-xl"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white transition-colors">
+            <i class="fa fa-weibo text-xl"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white transition-colors">
+            <i class="fa fa-github text-xl"></i>
+          </a>
+        </div>
+      </div>
+      <div class="mt-6 pt-6 border-t border-gray-700 text-center text-gray-400 text-sm">
+        <p>© 2025 大一时光机 · 保留所有权利</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 分享模态框 -->
+  <div id="shareModal" class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 hidden">
+    <div class="bg-white rounded-xl p-6 max-w-md w-full mx-4">
+      <div class="text-center mb-6">
+        <h3 class="text-xl font-bold text-primary">分享我的大一总结</h3>
+        <p class="text-gray-600 mt-2">选择分享方式</p>
+      </div>
+      <div class="grid grid-cols-4 gap-4">
+        <div class="flex flex-col items-center cursor-pointer hover:scale-105 transition-transform">
+          <div class="w-14 h-14 rounded-full bg-[#07C160] flex items-center justify-center text-white">
+            <i class="fa fa-weixin text-2xl"></i>
+          </div>
+          <span class="text-sm mt-2">微信</span>
+        </div>
+        <div class="flex flex-col items-center cursor-pointer hover:scale-105 transition-transform">
+          <div class="w-14 h-14 rounded-full bg-[#EB7350] flex items-center justify-center text-white">
+            <i class="fa fa-weibo text-2xl"></i>
+          </div>
+          <span class="text-sm mt-2">微博</span>
+        </div>
+        <div class="flex flex-col items-center cursor-pointer hover:scale-105 transition-transform">
+          <div class="w-14 h-14 rounded-full bg-[#1296DB] flex items-center justify-center text-white">
+            <i class="fa fa-qq text-2xl"></i>
+          </div>
+          <span class="text-sm mt-2">QQ</span>
+        </div>
+        <div class="flex flex-col items-center cursor-pointer hover:scale-105 transition-transform">
+          <div class="w-14 h-14 rounded-full bg-gray-200 flex items-center justify-center text-gray-600">
+            <i class="fa fa-link text-2xl"></i>
+          </div>
+          <span class="text-sm mt-2">复制链接</span>
+        </div>
+      </div>
+      <button id="closeShare" class="mt-8 w-full py-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors">
+        取消
+      </button>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // 移动端菜单切换
+    document.getElementById('menuToggle').addEventListener('click', function() {
+      const mobileMenu = document.getElementById('mobileMenu');
+      mobileMenu.classList.toggle('hidden');
+    });
+    
+    // 平滑滚动
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+          
+          // 关闭移动端菜单
+          document.getElementById('mobileMenu').classList.add('hidden');
+        }
+      });
+    });
+    
+    // 分享模态框
+    document.getElementById('shareBtn').addEventListener('click', function() {
+      document.getElementById('shareModal').classList.remove('hidden');
+    });
+    
+    document.getElementById('closeShare').addEventListener('click', function() {
+      document.getElementById('shareModal').classList.add('hidden');
+    });
+    
+    // 点击模态框外部关闭
+    document.getElementById('shareModal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        this.classList.add('hidden');
+      }
+    });
+    
+    // 导航栏滚动效果
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('py-2');
+        navbar.classList.remove('py-3');
+        navbar.classList.add('shadow-md');
+      } else {
+        navbar.classList.add('py-3');
+        navbar.classList.remove('py-2');
+        navbar.classList.remove('shadow-md');
+      }
+    });
+    
+    // 图表初始化
+    window.addEventListener('load', function() {
+      // 成绩分布图表
+      const gradesCtx = document.getElementById('gradesChart').getContext('2d');
+      new Chart(gradesCtx, {
+        type: 'bar',
+        data: {
+          labels: ['90-100', '80-89', '70-79', '60-69', '60以下'],
+          datasets: [{
+            label: '课程数量',
+            data: [5, 12, 8, 3, 0],
+            backgroundColor: [
+              'rgba(139, 92, 246, 0.8)',
+              'rgba(139, 92, 246, 0.6)',
+              'rgba(139, 92, 246, 0.4)',
+              'rgba(139, 92, 246, 0.2)',
+              'rgba(139, 92, 246, 0.1)'
+            ],
+            borderColor: [
+              'rgba(139, 92, 246, 1)'
+            ],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            y: {
+              beginAtZero: true,
+              ticks: {
+                stepSize: 2
+              }
+            }
+          }
+        }
+      });
+      
+      // 学科能力雷达图
+      const skillsCtx = document.getElementById('skillsRadarChart').getContext('2d');
+      new Chart(skillsCtx, {
+        type: 'radar',
+        data: {
+          labels: ['编程', '算法', '数学', '英语', '沟通', '团队协作'],
+          datasets: [{
+            label: '学科能力',
+            data: [85, 75, 80, 70, 88, 90],
+            backgroundColor: 'rgba(139, 92, 246, 0.2)',
+            borderColor: 'rgba(139, 92, 246, 1)',
+            pointBackgroundColor: 'rgba(139, 92, 246, 1)',
+            pointBorderColor: '#fff',
+            pointHoverBackgroundColor: '#fff',
+            pointHoverBorderColor: 'rgba(139, 92, 246, 1)'
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            r: {
+              angleLines: {
+                display: true
+              },
+              suggestedMin: 0,
+              suggestedMax: 100
+            }
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
